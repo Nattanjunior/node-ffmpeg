@@ -5,9 +5,16 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node --watch src/index.js"
+    "start": "node --watch src/index.js",
+    "web": "npx http-server ."
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "ffmpeg": "^0.0.4"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
 }

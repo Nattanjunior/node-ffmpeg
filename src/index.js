@@ -1,4 +1,5 @@
 import { createServer } from "node:http";
+import { createReadStream } from "node:fs";
 
 createServer((req, res) => {
   const headers = {
@@ -10,7 +11,8 @@ createServer((req, res) => {
     res.end();
     return;
   }
-  res.end("Hello World\n");
+  createReadStream("./assets/video.mp4")
+    .pipe(res);
 }).listen(3000, () => {
   console.log("Server running at http://localhost:3000/");
 }); 
